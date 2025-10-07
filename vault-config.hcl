@@ -8,4 +8,6 @@ listener "tcp" {
 }
 
 ui = true
+
+# Evita requerir capacidades del sistema
 disable_mlock = true

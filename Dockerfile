@@ -14,10 +14,28 @@
 # CMD ["vault", "server", "-dev", "-dev-listen-address=0.0.0.0:8200", "-dev-tls=false"]
 
 
+# FROM hashicorp/vault:latest
+
+# COPY vault-config.hcl /vault/config/vault-config.hcl
+
+# EXPOSE 8200
+
+# CMD ["vault", "server", "-config=/vault/config/vault-config.hcl"]
+
+
 FROM hashicorp/vault:latest
 
+# Desactiva capabilities problemáticas
+USER root
+
+# Copia tu configuración
 COPY vault-config.hcl /vault/config/vault-config.hcl
 
+# Cambia permisos para evitar requerir setcap
+RUN setcap -r /bin/vault || true
+
+# Puerto del servidor Vault
 EXPOSE 8200
 
+# Ejecuta Vault en modo servidor con tu configuración
 CMD ["vault", "server", "-config=/vault/config/vault-config.hcl"]
