@@ -1,0 +1,32 @@
+# ============================
+# Node, Python, or general cache folders
+# ============================
+node_modules/
+__pycache__/
+*.pyc
+*.log
+
+# ============================
+# Environment and config files
+# ============================
+.env
+.env.local
+*.env
+config/*.secret
+*.key
+*.pem
+
+# ============================
+# Docker artifacts
+# ============================
+*.pid
+*.tar
+docker-compose.override.yml
+
+# ============================
+# OS / IDE files
+# ============================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

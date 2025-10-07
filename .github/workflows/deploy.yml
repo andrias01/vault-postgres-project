@@ -1,0 +1,24 @@
+name: Build and Deploy Vault
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t my-vault-postgres .
+
+      - name: Run container test
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          docker run -d -p 8200:8200 \
+            -e DATABASE_URL=${{ secrets.DATABASE_URL }} \
+            my-vault-postgres
