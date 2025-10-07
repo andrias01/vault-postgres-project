@@ -11,4 +11,4 @@ EXPOSE 8200
 ENTRYPOINT []
 
 # Ejecuta Vault en modo dev sin TLS ni mlock
-CMD ["vault", "server", "-dev", "-dev-listen-address=0.0.0.0:8200", "-log-level=debug"]
+CMD ["vault", "server", "-dev", "-dev-listen-address=0.0.0.0:8200", "-dev-tls=false"]
