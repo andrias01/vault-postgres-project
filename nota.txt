@@ -1,0 +1,2 @@
+iniciar localmente docker
+docker run -d -p 8200:8200 vault-render
