@@ -1,6 +1,6 @@
 # Almacenamiento de Vault en PostgreSQL
 storage "postgresql" {
-  connection_url = "${DATABASE_URL}"
+  connection_url = "postgresql://postgres:zamaSRiLZrfwYFewRqWwFsgffHrvxSrA@switchyard.proxy.rlwy.net:35862/railway?sslmode=require"
 }
 
 # Configuración del listener HTTP

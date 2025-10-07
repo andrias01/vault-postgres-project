@@ -1,10 +1,15 @@
 storage "postgresql" {
-  connection_url = "postgresql://postgres:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?sslmode=require"
+  connection_url = "postgresql://postgres:zamaSRiLZrfwYFewRqWwFsgffHrvxSrA@switchyard.proxy.rlwy.net:35862/railway?sslmode=require"
+  table = "vault_kv_store"
+  ha_enabled = true
+  ha_table = "vault_ha_locks"
 }
+
+api_addr = "http://0.0.0.0:8200"
 
 listener "tcp" {
   address     = "0.0.0.0:8200"
-  tls_disable = "true"
+  tls_disable = 1
 }
 
 ui = true

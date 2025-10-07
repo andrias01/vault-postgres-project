@@ -1,2 +1,9 @@
 iniciar localmente docker
-docker run -d -p 8200:8200 vault-render
+docker run -d -p 8200:8200 
+
+docker stop vault-render ; docker rm vault-render
+
+vault-render
+
+# Nota: Se "quemó" (hard-coded) la cadena de conexión PostgreSQL en `vault-config.hcl` y `config.hcl` con:
+# postgresql://postgres:zamaSRiLZrfwYFewRqWwFsgffHrvxSrA@switchyard.proxy.rlwy.net:35862/railway?sslmode=require
