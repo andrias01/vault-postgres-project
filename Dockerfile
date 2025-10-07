@@ -1,4 +1,4 @@
-FROM vault:1.17.1
+FROM vault:1.15.6
 
 # Copia el archivo de configuración con las variables
 COPY vault-config.hcl /vault/config/vault-config.hcl
