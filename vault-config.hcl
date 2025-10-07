@@ -1,5 +1,5 @@
 storage "postgresql" {
-  connection_url = "${env("DATABASE_URL")}"
+  connection_url = "postgresql://postgres:zamaSRiLZrfwYFewRqWwFsgffHrvxSrA@switchyard.proxy.rlwy.net:35862/railway?sslmode=disable"
 }
 
 listener "tcp" {
